@@ -6,12 +6,14 @@ export default function NavBar() {
   const { favorites } = useContext(FavoriteContext);
 
   return (
-    <nav className="flex items-center justify-between h-12 px-2 text-xl font-bold bg-yellow-300 drop-shadow-md">
-      <Link to="/">Cocktails</Link>
-      <Link to="/favorites">
-        My Favorites
-        <span className="ml-2">{favorites.length}</span>
-      </Link>
-    </nav>
+    <header className="sticky top-0 flex justify-center bg-yellow-300 drop-shadow-md">
+      <nav className="flex items-center justify-between w-full h-12 px-2 text-xl font-bold md:w-3/4">
+        <Link to="/" className="hover:underline">Cocktails</Link>
+        <Link to="/favorites" className="hover:underline">
+          My Favorites
+          <span className="ml-2">{favorites.length}</span>
+        </Link>
+      </nav>
+    </header>
   );
 }

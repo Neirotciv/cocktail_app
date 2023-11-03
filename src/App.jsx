@@ -8,10 +8,12 @@ function App() {
   return (
     <>
       <NavBar />
-      {!loading &&
-        cocktailsData.map((cocktail) => (
-          <CocktailCard key={cocktail.idDrink} cocktail={cocktail} />
-        ))}
+      <main className="flex flex-col items-center md:justify-center md:flex-row md:flex-wrap">
+        {!loading &&
+          cocktailsData.map((cocktail) => (
+            <CocktailCard key={cocktail.idDrink} cocktail={cocktail} />
+          ))}
+      </main>
     </>
   );
 }

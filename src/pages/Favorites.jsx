@@ -12,14 +12,16 @@ export default function Favorites() {
   return (
     <>
       <NavBar />
-      <h1>Favorites</h1>
-      {!loading &&
-        favoriteCocktails.map((cocktail, index) => (
-          <CocktailCard
-            key={cocktail.drinks[0].idDrink}
-            cocktail={cocktail.drinks[0]}
-          />
-        ))}
+      <h1 className="p-2 text-xl font-bold text-center">Favorites</h1>
+      <main className="flex flex-col items-center md:justify-center md:flex-row md:flex-wrap">
+        {!loading &&
+          favoriteCocktails.map((cocktail, index) => (
+            <CocktailCard
+              key={cocktail.drinks[0].idDrink}
+              cocktail={cocktail.drinks[0]}
+            />
+          ))}
+      </main>
     </>
   );
 }
