@@ -5,7 +5,7 @@ export function FavoriteIcon(props) {
       width="2em"
       height="2em"
       viewBox="0 0 32 32"
-      className="text-red-700 "
+      className="text-red-700"
       {...props}
     >
       <path
@@ -23,7 +23,7 @@ export function FavoriteIconFilled(props) {
       width="2em"
       height="2em"
       viewBox="0 0 32 32"
-      className="text-red-700 "
+      className="text-red-700"
       {...props}
     >
       <path

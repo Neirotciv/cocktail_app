@@ -1,18 +1,13 @@
 import { useFetchCocktails } from "./hooks/useFetchCocktails";
 import CocktailCard from "./components/CocktailCard";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { FavoriteContext } from "./contexts/FavoriteContext";
+import NavBar from "./components/NavBar";
 
 function App() {
-  const [ cocktailsData, loading ] = useFetchCocktails("a");
-  const {favorites} = useContext(FavoriteContext);
+  const [cocktailsData, loading] = useFetchCocktails("a");
 
   return (
     <>
-      <h1>Home</h1>
-      <Link to="favorites">Favorites</Link>
-      <p>total favorites : {favorites.length}</p>
+      <NavBar />
       {!loading &&
         cocktailsData.map((cocktail) => (
           <CocktailCard key={cocktail.idDrink} cocktail={cocktail} />

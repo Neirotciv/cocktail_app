@@ -1,8 +1,8 @@
 import { useFetchCocktail } from "../hooks/useFetchCocktail";
 import {useIngredients} from "../hooks/useIngredients";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import IngredientCard from "../components/IngredientCard";
+import NavBar from "../components/NavBar";
 
 export default function Cocktail() {
   const { id } = useParams();
@@ -15,7 +15,7 @@ export default function Cocktail() {
 
   return (
     <>
-      <Link to="/">Back to home</Link>
+      <NavBar />
       <h1>{cocktail.strDrink}</h1>
       <p>{cocktail.strInstructions}</p>
       <img src={cocktail.strDrinkThumb} alt="" />
