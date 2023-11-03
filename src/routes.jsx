@@ -10,15 +10,15 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "cocktail/:id",
+    path: "/cocktail/:id",
     element: <Cocktail />,
   },
   {
-    path: "categories",
+    path: "/categories",
     element: <Categories />,
   },
   {
-    path: "favorites",
+    path: "/favorites",
     element: <Favorites />,
   },
 ]);

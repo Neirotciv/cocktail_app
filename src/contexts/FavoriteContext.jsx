@@ -5,7 +5,7 @@ export const FavoriteContext = createContext();
 export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
 
-  const addFavorite = (id) => {
+  const toggleFavorite = (id) => {
     const found = favorites.find((favorite) => favorite === id);
     if (found) {
       removeFavorite(id);
@@ -19,7 +19,7 @@ export const FavoritesProvider = ({ children }) => {
   };
 
   return (
-    <FavoriteContext.Provider value={{ favorites, addFavorite }}>
+    <FavoriteContext.Provider value={{ favorites, toggleFavorite }}>
       {children}
     </FavoriteContext.Provider>
   );
