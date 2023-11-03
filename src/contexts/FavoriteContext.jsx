@@ -18,8 +18,16 @@ export const FavoritesProvider = ({ children }) => {
     setFavorites((favorites) => favorites.filter((favId) => favId !== id));
   };
 
+  const checkIfFavorite = (id) => {
+    const found = favorites.find((favorite) => favorite === id);
+    if (found !== undefined) {
+      return true;
+    }
+    return false;
+  };
+
   return (
-    <FavoriteContext.Provider value={{ favorites, toggleFavorite }}>
+    <FavoriteContext.Provider value={{ favorites, toggleFavorite, checkIfFavorite }}>
       {children}
     </FavoriteContext.Provider>
   );

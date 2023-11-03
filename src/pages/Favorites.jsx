@@ -32,6 +32,10 @@ export default function Favorites() {
     fetchFavorites();
   }, [favorites]);
 
+  if (loading) {
+    return <p>Loading ...</p>;
+  }
+
   return (
     <>
       <Link to="/">Back to home</Link>
