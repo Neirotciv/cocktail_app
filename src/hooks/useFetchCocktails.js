@@ -15,7 +15,11 @@ export function useFetchCocktails(letter) {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`)
       .then((response) => response.json())
       .then((cocktailsData) => {
-        setCocktailsData(cocktailsData.drinks);
+        if (cocktailsData.drinks) {
+          setCocktailsData(cocktailsData.drinks);
+        } else {
+          setCocktailsData([]);
+        }
         setLoading(false);
       });
   }, [letter]);
